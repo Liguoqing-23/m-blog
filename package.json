@@ -4,12 +4,9 @@
     "description": "myq-blog by vitepress.",
     "main": "index.js",
     "scripts": {
-        "docs:dev": "vitepress dev src",
-        "docs:build": "vitepress build src",
-        "docs:preview": "vitepress preview src",
-        "start": "vitepress dev src",
+        "start": "vitepress dev src --port 8080",
         "build": "vitepress build src",
-        "preview": "vitepress preview src"
+        "preview": "vitepress preview src --port 8080"
     },
     "keywords": [
         "myq-blog",
@@ -21,6 +18,9 @@
     "author": "myq <jerry200223200223@126.com>",
     "license": "ISC",
     "devDependencies": {
-        "vitepress": "^1.0.0-rc.44"
+        "@vitejs/plugin-vue-jsx": "^3.1.0",
+        "vitepress": "^1.0.0-rc.44",
+        "vue": "^3.4.21",
+        "quasar": "^2.14.6"
     }
 }

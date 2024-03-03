@@ -6,14 +6,7 @@ hero:
     name: MYQ 博客笔记
     text: 探索|记录|学习|思考
     tagline: 分享学习，记录生活
-    image: /public/logo.png
-    actions:
-        - theme: brand
-          text: Markdown Examples
-          link: /markdown-examples
-        - theme: alt
-          text: API Examples
-          link: /api-examples
+    image: /logo.png
 
 features:
     - title: Feature A

@@ -1,13 +1,27 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: doc
-
-
 ---
 
-# 算法
+```js
+// rollup.config.js
+import { fileURLToPath } from 'node:url';
 
-## 算法基础
+export default {
+	//...,
+	external: [
+		'some-externally-required-library',
+		fileURLToPath(
+			new URL(
+				'src/some-local-file-that-should-not-be-bundled.js',
+				import.meta.url
+			)
+		),
+		/node_modules/
+	]
+};
+```
 
-- [时间复杂度](./algorithm/time-complexity.md)
-- [空间复杂度](./algorithm/space-complexity.md)
+<q-card class="q-pa-md" dark flat>
+    <q-btn color="primary" @click="() => console.log(123)">Hello Quasar</q-btn>
+</q-card>

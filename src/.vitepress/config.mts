@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import VueJsx from "@vitejs/plugin-vue-jsx";
 import type { UserConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
@@ -6,6 +7,7 @@ export default defineConfig({
     lang: "zh-CN",
     title: "MYQ 博客笔记",
     description: "探索|记录|学习|思考",
+    // cleanUrls: true,
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
@@ -13,29 +15,41 @@ export default defineConfig({
             { text: "博客", link: "/algorithm/" },
         ],
         logo: {
-            light: "/public/logo-light.png",
-            dark: "/public/logo-dark.png",
+            light: "/logo-light.png",
+            dark: "/logo-dark.png",
         },
-        sidebar: [
-            {
-                "/algorithm/": [
-                    {
-                        text: "Algorithm",
-                        items: [
-                            { text: "Index", link: "/guide/" },
-                        ],
-                    },
-                ],
-                text: "Examples",
-                items: [
-                    { text: "Markdown Examples", link: "/markdown-examples" },
-                    { text: "Runtime API Examples", link: "/api-examples" },
-                ],
-            },
-        ],
-
-        socialLinks: [
-            { icon: "github", link: "https://github.com/vuejs/vitepress" },
-        ],
+        sidebar: {
+            "/algorithm/": [
+                {
+                    text: "Algorithm",
+                    collapsed: false,
+                    items: [
+                        { text: "算法篇介绍", link: "/algorithm/index.html" },
+                    ],
+                },
+            ],
+        },
+    },
+    vite: {
+        plugins: [VueJsx()],
+        //   optimizeDeps: {
+        //     exclude: ['quasar'],
+        //   },
+        //   resolve: {
+        //     dedupe: ['vue', 'quasar', 'Quasar', 'pubsub-js'], // avoid error when using dependencies that also use Vue
+        //   },
+        //   build: {
+        //     rollupOptions: {
+        //       external: [/quasar\/.+/, 'vue']
+        //     },
+        //   },
+    },
+    markdown: {
+        lineNumbers: true,
+        theme: {
+            // https://shiki.style/languages
+            light: "vitesse-light",
+            dark: "vitesse-dark",
+        },
     },
 } as UserConfig);
