@@ -1,6 +1,52 @@
 @import "quasar/dist/quasar.css";
 
-/* :root {
-    --vp-font-family-base: 'Roboto', sans-serif;
-    --vp-font-family-mono: Consolas, monospace;
-} */
+:root {
+    /* normal text font */
+    --vp-font-family-base: "Roboto", sans-serif;
+    /* code font */
+    --vp-font-family-mono: "Jetbrains Mono", Consolas, "Courier New", monospace;
+
+    /* Code */
+    --vp-code-line-height: 1.7;
+    --vp-code-font-size: 1em;
+    --vp-code-color: #a8b1ff;
+    --vp-code-link-color: #a8b1ff;
+    --vp-code-link-hover-color: #5c73e7;
+    --vp-code-bg: rgba(101, 117, 133, 0.16);
+
+    --vp-code-block-color: rgba(235, 235, 245, 0.6);
+    --vp-code-block-bg: #292d3e;
+    --vp-code-block-divider-color: #000000;
+
+    --vp-code-lang-color: rgba(235, 235, 245, 0.616);
+
+    --vp-code-line-highlight-color: rgba(101, 117, 133, 0.16);
+    --vp-code-line-number-color: rgba(235, 235, 245, 0.38);
+
+    --vp-code-line-diff-add-color: rgba(16, 185, 129, 0.16);
+    --vp-code-line-diff-add-symbol-color: #3dd68c;
+
+    --vp-code-line-diff-remove-color: rgba(244, 63, 94, 0.16);
+    --vp-code-line-diff-remove-symbol-color: #f66f81;
+
+    --vp-code-line-warning-color: rgba(234, 179, 8, 0.16);
+    --vp-code-line-error-color: rgba(244, 63, 94, 0.16);
+
+    --vp-code-copy-code-border-color: #2e2e32;
+    --vp-code-copy-code-bg: #202127;
+    --vp-code-copy-code-hover-border-color: #2e2e32;
+    --vp-code-copy-code-hover-bg: #1b1b1f;
+    --vp-code-copy-code-active-text: rgba(235, 235, 245, 0.6);
+    --vp-code-copy-copied-text-content: "Copied";
+
+    --vp-code-tab-divider: #191d2c;
+    --vp-code-tab-text-color: rgba(235, 235, 245, 0.6);
+    --vp-code-tab-bg: var(#161618);
+    --vp-code-tab-hover-text-color: rgba(255, 255, 245, 0.86);
+    --vp-code-tab-active-text-color: rgba(255, 255, 245, 0.86);
+    --vp-code-tab-active-bar-color: #a8b1ff;
+}
+
+code {
+    font-family: var(--vp-font-family-mono);
+}

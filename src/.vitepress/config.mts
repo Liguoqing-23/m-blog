@@ -45,11 +45,11 @@ export default defineConfig({
         //   },
     },
     markdown: {
-        lineNumbers: true,
+        lineNumbers: false,
         theme: {
-            // https://shiki.style/languages
-            light: "vitesse-light",
-            dark: "vitesse-dark",
+            // https://shiki.style/themes
+            light: "monokai",
+            dark: "monokai",
         },
     },
 } as UserConfig);
