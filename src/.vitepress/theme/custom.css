@@ -1,10 +1,17 @@
-@import "quasar/dist/quasar.css";
+/* Import Quasar css */
+/* @import "quasar/dist/quasar.css"; */
+@import "./quasar.css";
+
+/* Import icon libraries */
+@import "@quasar/extras/material-icons/material-icons.css";
 
 :root {
+    /* https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css */
+
     /* normal text font */
     --vp-font-family-base: "Roboto", sans-serif;
     /* code font */
-    --vp-font-family-mono: "Jetbrains Mono", Consolas, "Courier New", monospace;
+    --vp-font-family-mono: Consolas, "Jetbrains Mono", "Courier New", monospace;
 
     /* Code */
     --vp-code-line-height: 1.7;
@@ -45,8 +52,37 @@
     --vp-code-tab-hover-text-color: rgba(255, 255, 245, 0.86);
     --vp-code-tab-active-text-color: rgba(255, 255, 245, 0.86);
     --vp-code-tab-active-bar-color: #a8b1ff;
+
+    /* Home */
+    --vp-home-hero-name-color: var(--vp-c-brand-1);
+    --vp-home-hero-name-background: transparent;
+
+    --vp-home-hero-image-background-image: none;
+    --vp-home-hero-image-filter: none;
 }
 
-code {
-    font-family: var(--vp-font-family-mono);
+/* 滚动槽 */
+::-webkit-scrollbar {
+    display: none;
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.body--light .mb-shadow {
+    box-shadow: 0 0 10px 0 rgba(41, 45, 62, 0.1);
+}
+
+.body--dark .mb-shadow {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }

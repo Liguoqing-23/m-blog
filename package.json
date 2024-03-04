@@ -18,9 +18,9 @@
     "author": "myq <jerry200223200223@126.com>",
     "license": "ISC",
     "devDependencies": {
-        "@vitejs/plugin-vue-jsx": "^3.1.0",
+        "@quasar/extras": "^1.16.9",
+        "quasar": "^2.14.6",
         "vitepress": "^1.0.0-rc.44",
-        "vue": "^3.4.21",
-        "quasar": "^2.14.6"
+        "vue": "^3.4.21"
     }
 }

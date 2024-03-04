@@ -1,37 +1,41 @@
 import { defineConfig } from "vitepress";
-import VueJsx from "@vitejs/plugin-vue-jsx";
 import type { UserConfig } from "vitepress";
+
+import { sidebar_algorithm } from "./sidebar/sidebar_algorithm";
+import { sidebar_build_tools } from "./sidebar/sidebar_build_tools";
+import { sidebar_tools } from "./sidebar/sidebar_tools";
+import { sidebar_static_site_generator } from "./sidebar/sidebar_static_site_generator";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     lang: "zh-CN",
     title: "MYQ 博客笔记",
     description: "探索|记录|学习|思考",
+    lastUpdated: true,
     // cleanUrls: true,
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             { text: "主页", link: "/" },
-            { text: "博客", link: "/algorithm/" },
+            { text: "博客", link: "/blog/algorithm/" },
         ],
         logo: {
             light: "/logo-light.png",
             dark: "/logo-dark.png",
         },
         sidebar: {
-            "/algorithm/": [
-                {
-                    text: "Algorithm",
-                    collapsed: false,
-                    items: [
-                        { text: "算法篇介绍", link: "/algorithm/index.html" },
-                    ],
-                },
+            "/blog/": [
+                sidebar_algorithm,
+                sidebar_build_tools,
+                sidebar_tools,
+                sidebar_static_site_generator,
             ],
+        },
+        search: {
+            provider: "local",
         },
     },
     vite: {
-        plugins: [VueJsx()],
         //   optimizeDeps: {
         //     exclude: ['quasar'],
         //   },
@@ -45,6 +49,7 @@ export default defineConfig({
         //   },
     },
     markdown: {
+        // https://github.com/vuejs/vitepress/blob/main/src/node/markdown/markdown.ts
         lineNumbers: false,
         theme: {
             // https://shiki.style/themes

@@ -3,11 +3,6 @@
 layout: doc
 ---
 
-<script setup>
-import { useData } from 'vitepress';
-const { isDark } = useData();
-</script>
-
 ```js
 // rollup.config.js
 import { fileURLToPath } from "node:url";
@@ -27,7 +22,9 @@ export default {
 };
 ```
 
-<q-card class="q-pa-md" bordered flat :dark="isDark">
+<auto-dark />
+
+<q-card class="q-pa-md" bordered flat>
     <q-btn color="primary" @click="() => console.log(123)">Hello Quasar</q-btn>
 </q-card>
 
