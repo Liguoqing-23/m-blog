@@ -4,9 +4,9 @@
     "description": "myq-blog by vitepress.",
     "main": "index.js",
     "scripts": {
-        "start": "vitepress dev src --port 8080",
-        "build": "vitepress build src",
-        "preview": "vitepress preview src --port 8080"
+        "start": "vitepress dev --port 8080",
+        "build": "vitepress build",
+        "preview": "vitepress preview --port 8080"
     },
     "keywords": [
         "myq-blog",
@@ -22,5 +22,8 @@
         "quasar": "^2.14.6",
         "vitepress": "^1.0.0-rc.44",
         "vue": "^3.4.21"
+    },
+    "dependencies": {
+        "raindrop-fx": "^1.0.8"
     }
 }
