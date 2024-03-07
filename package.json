@@ -6,7 +6,7 @@
     "scripts": {
         "start": "vitepress dev --port 8080",
         "build": "vitepress build",
-        "preview": "vitepress preview --port 8080"
+        "preview": "vitepress preview --port 80"
     },
     "keywords": [
         "myq-blog",
@@ -22,8 +22,5 @@
         "quasar": "^2.14.6",
         "vitepress": "^1.0.0-rc.44",
         "vue": "^3.4.21"
-    },
-    "dependencies": {
-        "raindrop-fx": "^1.0.8"
     }
 }

@@ -30,7 +30,6 @@ import {
   watch,
   withDirectives
 } from "./chunk-Z6B2QTD3.js";
-import "./chunk-Y2F7D3TJ.js";
 
 // node_modules/quasar/dist/quasar.esm.prod.js
 var h0 = Object.create;

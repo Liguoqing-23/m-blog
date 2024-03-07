@@ -1,56 +1,50 @@
 {
-  "hash": "dadb676f",
+  "hash": "ea640761",
   "configHash": "331284ac",
-  "lockfileHash": "74bc67e3",
-  "browserHash": "04c9059a",
+  "lockfileHash": "a49ab24c",
+  "browserHash": "da06ee50",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "e6fa649b",
+      "fileHash": "a4f66123",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "9253c668",
+      "fileHash": "7dd616ef",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "94c54506",
+      "fileHash": "57dd3d1c",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "cfdf4e08",
+      "fileHash": "9d8a2217",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "c2892290",
+      "fileHash": "538914ba",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "48189af6",
+      "fileHash": "70bec5a7",
       "needsInterop": false
     },
     "quasar": {
       "src": "../../../node_modules/quasar/dist/quasar.esm.prod.js",
       "file": "quasar.js",
-      "fileHash": "a218f28a",
+      "fileHash": "0ebb2ee4",
       "needsInterop": false
-    },
-    "raindrop-fx": {
-      "src": "../../../node_modules/raindrop-fx/dist/index.js",
-      "file": "raindrop-fx.js",
-      "fileHash": "e77c67a3",
-      "needsInterop": true
     }
   },
   "chunks": {
@@ -59,9 +53,6 @@
     },
     "chunk-Z6B2QTD3": {
       "file": "chunk-Z6B2QTD3.js"
-    },
-    "chunk-Y2F7D3TJ": {
-      "file": "chunk-Y2F7D3TJ.js"
     }
   }
 }
