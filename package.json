@@ -6,7 +6,7 @@
     "scripts": {
         "start": "vitepress dev --port 8080",
         "build": "vitepress build",
-        "preview": "vitepress preview --port 80"
+        "preview": "vitepress preview --port 8080"
     },
     "keywords": [
         "myq-blog",
