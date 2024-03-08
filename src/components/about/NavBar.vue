@@ -5,9 +5,11 @@
                 :class="`col-md-${
                     12 / props.info_list.length
                 } col-xs-12 text-weight-bolder text-no-wrap column ${
-                    index > Math.floor(props.info_list.length / 2)
+                    $q.screen.gt.md
+                    ? index > Math.floor(props.info_list.length / 2)
                         ? 'text-right'
                         : 'text-left'
+                        : 'text-right'
                 }`"
                 v-for="(item, index) in props.info_list"
                 :key="index"
@@ -19,6 +21,9 @@
 </template>
 
 <script setup>
+import { useQuasar } from 'quasar';
+const $q = useQuasar();
+
 const props = defineProps({
     info_list: {
         type: Array,
