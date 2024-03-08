@@ -5,11 +5,9 @@
                 :class="`col-md-${
                     12 / props.info_list.length
                 } col-xs-12 text-weight-bolder text-no-wrap column ${
-                    index === 0
-                        ? 'text-left'
-                        : index === props.info_list.length - 1
+                    index > Math.floor(props.info_list.length / 2)
                         ? 'text-right'
-                        : 'text-center'
+                        : 'text-left'
                 }`"
                 v-for="(item, index) in props.info_list"
                 :key="index"

@@ -1,49 +1,55 @@
 {
-  "hash": "ea640761",
+  "hash": "7f45815e",
   "configHash": "331284ac",
-  "lockfileHash": "a49ab24c",
-  "browserHash": "da06ee50",
+  "lockfileHash": "442f8503",
+  "browserHash": "4ec3865f",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "a4f66123",
+      "fileHash": "70334f57",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "7dd616ef",
+      "fileHash": "264f55df",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "57dd3d1c",
+      "fileHash": "063791c4",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "9d8a2217",
+      "fileHash": "47683e9f",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "538914ba",
+      "fileHash": "0de42d20",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "70bec5a7",
+      "fileHash": "ff6012b6",
       "needsInterop": false
     },
     "quasar": {
       "src": "../../../node_modules/quasar/dist/quasar.esm.prod.js",
       "file": "quasar.js",
-      "fileHash": "0ebb2ee4",
+      "fileHash": "77d3d9c5",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "9507c35b",
       "needsInterop": false
     }
   },
@@ -53,6 +59,9 @@
     },
     "chunk-Z6B2QTD3": {
       "file": "chunk-Z6B2QTD3.js"
+    },
+    "chunk-CSAU5B4Q": {
+      "file": "chunk-CSAU5B4Q.js"
     }
   }
 }

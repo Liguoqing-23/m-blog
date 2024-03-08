@@ -18,15 +18,18 @@ const theme_config = {
     search: {
         provider: "local",
     },
-    // footer: {
-    //     message: "MYQ 博客笔记",
-    //     copyright: "",
-    // },
+    footer: {
+        message: "© 2022-2024 MYQ 博客笔记",
+        copyright: "",
+    },
 };
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    lang: "zh-CN",
+    head: [
+        ["link", { rel: "icon", href: "/logo.png" }],
+    ],
+    lang: "zh",
     title: "MYQ 博客笔记",
     description: "探索|记录|学习|思考",
     // lastUpdated: true,

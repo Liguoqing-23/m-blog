@@ -47,7 +47,7 @@ import { ref, reactive } from "vue";
 
 const status = reactive({
     name: "李国清",
-    intention: "前端开发工程师",
+    intention: "前端开发 随时到岗",
     basic_info: [
         {
             icon: "email",

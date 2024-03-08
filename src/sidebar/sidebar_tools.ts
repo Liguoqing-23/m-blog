@@ -7,8 +7,8 @@ export const sidebar_tools = {
             text: "Git",
             items: [
                 {
-                    text: "Git 篇介绍",
-                    link: `${prefix}/git/Git 篇介绍`,
+                    text: "Git 基本使用",
+                    link: `${prefix}/git/Git 基本使用`,
                 },
             ],
         },
