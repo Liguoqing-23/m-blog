@@ -4,13 +4,13 @@ layout: page
 
 <template>
     <q-card flat style="background-color: transparent">
+        <q-card-section v-if="!is_print" class="flex justify-end no-bg" @click="download_file">
+            <q-btn round flat icon="save"/>
+        </q-card-section>
         <q-card-section horizontal class="flex flex-center justify-between">
             <!-- /avatar_mask.jpg -->
-            <q-card-section style="height: 100%; width: 100%;">
-                <q-img
-                    class="rounded-borders"
-                    src="/avatar.jpg"
-                />
+            <q-card-section style="height: 100%; width: 100%">
+                <q-img class="rounded-borders" src="/avatar.jpg" />
             </q-card-section>
 
             <q-card-section class="col-md-10 col-xs-8">
@@ -22,6 +22,7 @@ layout: page
                         意向岗位：{{ status.intention }}
                     </q-item>
                 </q-list>
+
                 <q-list dense class="row">
                     <q-item
                         v-for="(item, index) in status.basic_info"
@@ -36,6 +37,21 @@ layout: page
                             </q-item-label>
                         </q-item-section>
                     </q-item>
+
+                    <q-item class="col-md-6 col-xs-12" v-if="is_print">
+                        <q-item-section>
+                            <q-item-label class="text-no-wrap">
+                                <q-icon
+                                    :name="status.blog_link.icon"
+                                    color="teal"
+                                />
+                                {{ status.blog_link.title + "：" }}
+                                <span style="color: #8585bd">
+                                    {{ status.blog_link.content }}
+                                </span>
+                            </q-item-label>
+                        </q-item-section>
+                    </q-item>
                 </q-list>
             </q-card-section>
         </q-card-section>
@@ -43,11 +59,23 @@ layout: page
 </template>
 
 <script setup>
-import { ref, reactive } from "vue";
+import { reactive } from "vue";
+
+const props = defineProps({
+    is_print: {
+        type: Boolean,
+        default: false,
+    },
+});
 
 const status = reactive({
     name: "李国清",
     intention: "前端开发 随时到岗",
+    blog_link: {
+        icon: "link",
+        title: "个人博客",
+        content: "http://myq.xavierlee.top/",
+    },
     basic_info: [
         {
             icon: "email",
@@ -59,11 +87,6 @@ const status = reactive({
             title: "联系电话",
             content: "153-2161-0166",
         },
-        // {
-        //     icon: "location_on",
-        //     title: "地址",
-        //     content: "北京市",
-        // },
         {
             icon: "cake",
             title: "出生年月",
@@ -76,4 +99,12 @@ const status = reactive({
         },
     ],
 });
+
+const download_file = () => {
+    // window.open("/resume by 李国清.pdf");
+    const a = document.createElement("a");
+    a.href = "/resume by 李国清.pdf";
+    a.download = "resume by 李国清.pdf";
+    a.click();
+}
 </script>

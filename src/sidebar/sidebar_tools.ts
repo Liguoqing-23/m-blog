@@ -21,5 +21,14 @@ export const sidebar_tools = {
                 },
             ],
         },
+        {
+            text: "Google Chrome",
+            items: [
+                {
+                    text: "命令实现网站长截图",
+                    link: `${prefix}/google_chrome/命令实现网站长截图`,
+                }
+            ]
+        }
     ],
 };

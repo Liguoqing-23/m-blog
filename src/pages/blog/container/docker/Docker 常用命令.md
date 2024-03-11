@@ -14,5 +14,5 @@
 
 <auto-dark />
 
-<show-image src="/Docker_Command.png" />
+<show-image src="/img/Docker_Command.png" />
 

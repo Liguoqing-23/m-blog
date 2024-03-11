@@ -6,7 +6,7 @@ export const sidebar_static_site_generator = {
             items: [
                 {
                     text: "VitePress 集成 Quasar",
-                    link: "/blog/static_site_generator/vitepress/index",
+                    link: "/blog/static_site_generator/vitepress/VitePress 集成 Quasar",
                 },
             ],
         },

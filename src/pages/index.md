@@ -14,5 +14,3 @@
     footer: "MYQ 博客笔记",
 }
 ---
-
-<rain-drop-f-x />

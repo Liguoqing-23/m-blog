@@ -5,8 +5,9 @@
 @import "@quasar/extras/material-icons/material-icons.css";
 
 :root {
-    /* https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css */
+    --md-code-bg-color: #24283a;
 
+    /* https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css */
     /* normal text font */
     --vp-font-family-base: "Roboto", sans-serif;
     /* code font */
@@ -21,7 +22,7 @@
     --vp-code-bg: rgba(101, 117, 133, 0.16);
 
     --vp-code-block-color: rgba(235, 235, 245, 0.6);
-    --vp-code-block-bg: #292d3e;
+    --vp-code-block-bg: var(--md-code-bg-color);
     --vp-code-block-divider-color: #000000;
 
     --vp-code-lang-color: rgba(235, 235, 245, 0.616);
@@ -56,8 +57,16 @@
     --vp-home-hero-name-color: var(--vp-c-brand-1);
     --vp-home-hero-name-background: transparent;
 
-    --vp-home-hero-image-background-image: none;
-    --vp-home-hero-image-filter: none;
+    --vp-home-hero-image-background-image: linear-gradient(
+        -45deg,
+        #3451b2 50%,
+        #3451b2 50%
+    );
+    --vp-home-hero-image-filter: blur(200px);
+}
+
+.dark {
+    --md-code-bg-color: #181818;
 }
 
 /* 滚动槽 */
@@ -94,7 +103,7 @@ td {
     white-space: nowrap; /* 避免内容换行 */
 }
 
-/* h2 */
-/* .vp-doc h2 {
-    border-top: none;
-} */
+/* quasar background */
+.no-bg {
+    background: transparent;
+}

@@ -6,8 +6,8 @@ import { sidebar_config } from "../src/sidebar";
 const theme_config = {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-        { text: "主页", link: "/index" },
-        { text: "博客", link: "/blog/algorithm/" },
+        { text: "主页", link: "/" },
+        { text: "博客", link: "/blog/welcome" },
         { text: "关于", link: "/about" },
     ],
     logo: {
