@@ -4,14 +4,20 @@ layout: page
 
 <template>
     <q-card flat style="background-color: transparent">
-        <q-card-section v-if="!is_print" class="flex justify-end no-bg" @click="download_file">
-            <q-btn round flat icon="save"/>
+        <q-card-section
+            v-if="!is_print"
+            class="flex justify-end no-bg"
+            @click="download_file"
+        >
+            <q-btn round flat icon="save" />
         </q-card-section>
         <q-card-section horizontal class="flex flex-center justify-between">
             <!-- /avatar_mask.jpg -->
-            <q-card-section style="height: 100%; width: 100%">
-                <q-img class="rounded-borders" src="/avatar.jpg" />
-            </q-card-section>
+            <q-img
+                class="rounded-borders"
+                src="/avatar.jpg"
+                style="height: 100%; width: 100%"
+            />
 
             <q-card-section class="col-md-10 col-xs-8">
                 <q-list class="row">
@@ -106,5 +112,5 @@ const download_file = () => {
     a.href = "/resume by 李国清.pdf";
     a.download = "resume by 李国清.pdf";
     a.click();
-}
+};
 </script>

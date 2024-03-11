@@ -13,7 +13,7 @@ footer: false
 > -   学业水平：专业排名前 10%，GPA 3.6/4.0
 > -   主修课程：C/C++ | 100、数据结构与算法 94、软件工程 97、计网 94 等
 > -   奖项荣誉：校级特等奖学金、校级三等奖学金、蓝桥杯二等奖等
-> -   毕业设计：《大学生个人知识管理系统的设计与实现》 Vue3 | Quasar | SpringBoot | MySQL
+> -   毕业设计：《大学生个人知识管理系统的设计与实现》 Vue3 Quasar SpringBoot MySQL
 
 ## 实习经历
 
@@ -57,7 +57,7 @@ footer: false
 
 <style module>
 h2 {
-    font-size: 19px !important;
+    font-size: 18px !important;
     margin: 0 !important;
     padding: 0 !important;
 }
