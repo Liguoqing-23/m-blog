@@ -56,7 +56,7 @@ footer: false
 -   在校期间参与多个项目，对项目有自己的见解，能够提出创新性的解决方案。
 
 <style module>
-h2 {
+/* h2 {
     font-size: 18px !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -75,5 +75,5 @@ blockquote {
 a {
     color: var(#8585bd) !important;
     text-decoration: none !important;
-}
+} */
 </style>

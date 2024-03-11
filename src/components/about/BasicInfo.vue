@@ -4,13 +4,11 @@ layout: page
 
 <template>
     <q-card flat style="background-color: transparent">
-        <q-card-section
-            v-if="!is_print"
-            class="flex justify-end no-bg"
-            @click="download_file"
-        >
-            <q-btn round flat icon="save" />
-        </q-card-section>
+        <div v-if="!is_print" class="flex justify-end no-bg">
+            <q-btn round flat icon="save" @click="download_file">
+                <q-tooltip>下载简历 pdf</q-tooltip>
+            </q-btn>
+        </div>
         <q-card-section horizontal class="flex flex-center justify-between">
             <!-- /avatar_mask.jpg -->
             <q-img
