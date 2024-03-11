@@ -1,9 +1,10 @@
 <template>
     <q-card class="q-py-xs row" flat style="background-color: transparent">
-        <div
-            v-for="(item, index) in props.info_list"
-            class="col-xs-12 text-weight-bolder text-no-wrap"
-            :class="`col-sm-${12 / props.info_list.length} 
+        <ClientOnly>
+            <div
+                v-for="(item, index) in props.info_list"
+                class="col-xs-12 text-weight-bolder text-no-wrap"
+                :class="`col-sm-${12 / props.info_list.length} 
             ${
                 is_greater_than_sm
                     ? index < props.info_list.length / 2
@@ -11,10 +12,11 @@
                         : 'text-right'
                     : 'text-left'
             }`"
-            :key="index"
-        >
-            {{ item }}
-        </div>
+                :key="index"
+            >
+                {{ item }}
+            </div>
+        </ClientOnly>
     </q-card>
 </template>
 
