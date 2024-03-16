@@ -20,7 +20,7 @@ const theme_config = {
     },
     footer: {
         message: "© 2022-2024 MYQ 博客笔记",
-        copyright: "",
+        copyright: "京ICP备2024053736号",
     },
 };
 
