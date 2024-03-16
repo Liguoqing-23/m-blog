@@ -4,7 +4,7 @@
     "description": "myq-blog by vitepress.",
     "main": "index.js",
     "scripts": {
-        "start": "vitepress dev --port 8080",
+        "start": "vitepress dev --port 80",
         "build": "vitepress build",
         "preview": "vitepress preview --port 8080"
     },
