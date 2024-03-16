@@ -6,14 +6,9 @@
                 <img :src="props.src" alt="Image" />
             </q-card-section>
 
-            <!-- download img -->
             <q-card class="absolute-top-right">
                 <q-card-section>
-                    <q-btn
-                        round
-                        icon="file_download"
-                        @click="downloadImage"
-                    />
+                    <q-btn round icon="file_download" @click="downloadImage" />
                 </q-card-section>
             </q-card>
             <!-- download img -->

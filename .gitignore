@@ -4,3 +4,6 @@ node_modules
 # vitepress build & cache
 src/.vitepress/dist
 src/.vitepress/cache
+
+.vscode
+.idea

@@ -2,7 +2,7 @@ import type { Theme } from "vitepress";
 // import DefaultTheme from "vitepress/theme";
 import DefaultTheme from "vitepress/theme-without-fonts";
 
-import { Quasar, Dialog } from "quasar";
+import { Quasar, Dialog, Notify } from "quasar";
 
 import AutoDark from "../../src/components/AutoDark.vue";
 import ShowImage from "../../src/components/ShowImage.vue";
@@ -20,7 +20,7 @@ export default {
             Quasar,
             {
                 config: {},
-                plugins: { Dialog },
+                plugins: { Dialog, Notify },
             },
             // @ts-ignore
             { req: { headers: {} } }
