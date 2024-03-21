@@ -4,7 +4,7 @@
 
 `apply` 和 `call` 是 JS 提供的两个方法，用来显示绑定 this。这两个方法的作用是一样的，都是用来改变函数的 this 指向。它们的区别在于传参的方式不同。
 
-`apply` 和 `call` 的第一个参数都是要绑定的 this 值，第二个参数开始是函数的参数。`apply` 的第二个参数是一个数组，`call` 的第二个参数是一个参数列表。
+`apply` 和 `call` 的第一个参数都是要绑定的 this 值，第二个参数开始是函数的参数。`apply` 的第二个参数是一个数组，`call` 则是一个参数列表。
 
 ```javascript
 function foo(a, b) {
@@ -15,6 +15,95 @@ const obj = {};
 
 foo.apply(obj, [1, 2]); // obj 1 2
 foo.call(obj, 1, 2); // obj 1 2
+```
+
+### 手写 apply
+
+```javascript
+Function.prototype.apply = function (thisArg, args) {
+    if (typeof this !== "function") {
+        throw new TypeError("Apply must be called on a function");
+    }
+    thisArg = thisArg || window;
+    thisArg.fn = this;
+    const result = thisArg.fn(...args);
+    delete thisArg.fn;
+    return result;
+};
+
+// test
+function foo(a, b) {
+    console.log(this, a, b);
+}
+const obj = {};
+foo.apply(obj, [1, 2]); // obj 1 2
+```
+
+### 手写 call
+
+```javascript
+Function.prototype.call = function (thisArg, ...args) {
+    if (typeof this !== "function") {
+        throw new TypeError("Call must be called on a function");
+    }
+    thisArg = thisArg || window;
+    thisArg.fn = this;
+    const result = thisArg.fn(...args);
+    delete thisArg.fn;
+    return result;
+};
+
+// test
+function foo(a, b) {
+    console.log(this, a, b);
+}
+const obj = {};
+foo.call(obj, 1, 2); // obj 1 2
+```
+
+### apply 和 call 的应用场景
+
+1. 改变 this 指向
+
+```javascript
+function foo() {
+    console.log(this);
+}
+
+const obj = {};
+foo.call(obj); // obj
+```
+
+2. 借用其他对象的方法
+
+```javascript
+const obj1 = {
+    name: "obj1",
+    foo() {
+        console.log(this.name);
+    },
+};
+
+const obj2 = {
+    name: "obj2",
+};
+
+obj1.foo.call(obj2); // obj2
+```
+
+3. 继承
+
+```javascript
+function Animal(name) {
+    this.name = name;
+}
+
+function Dog(name) {
+    Animal.call(this, name);
+}
+
+const dog = new Dog("dog");
+console.log(dog.name); // dog
 ```
 
 ## 为什么要引入新的 bind

@@ -27,6 +27,7 @@ export default {
         );
         app.component("AutoDark", AutoDark);
         app.component("ShowImage", ShowImage);
+
         app.component("BasicInfo", BasicInfo);
         app.component("NavBar", NavBar);
     },

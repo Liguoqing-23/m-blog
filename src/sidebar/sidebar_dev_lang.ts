@@ -71,6 +71,22 @@ export const sidebar_dev_lang = {
                     link: `${prefix}/javascript/原型`,
                 },
                 {
+                    text: "Proxy 和 Reflect",
+                    link: `${prefix}/javascript/Proxy 和 Reflect`,
+                },
+                {
+                    text: "Promise",
+                    link: `${prefix}/javascript/Promise`,
+                },
+                {
+                    text: "Iterator 和 Generator",
+                    link: `${prefix}/javascript/Iterator 和 Generator`,
+                },
+                {
+                    text: "await and async",
+                    link: `${prefix}/javascript/await and async`,
+                },
+                {
                     text: "高性能处理大量数据列表",
                     link: `${prefix}/javascript/高性能处理大量数据列表`,
                 },
