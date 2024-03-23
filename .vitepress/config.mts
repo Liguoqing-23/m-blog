@@ -36,6 +36,8 @@ export default defineConfig({
     srcDir: "src/pages/",
     cleanUrls: true,
     themeConfig: theme_config,
+    cacheDir: "cache",
+    outDir: "dist",
     vite: {
         //   optimizeDeps: {
         //     exclude: ['quasar'],

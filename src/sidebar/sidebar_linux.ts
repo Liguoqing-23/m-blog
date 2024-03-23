@@ -1,6 +1,8 @@
+import { DefaultTheme } from "vitepress";
+
 const prefix = "/blog/linux";
 
-export const sidebar_linux = {
+export const sidebar_linux: DefaultTheme.SidebarItem = {
     text: "Linux",
     items: [
         {

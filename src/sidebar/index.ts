@@ -7,10 +7,14 @@ import { sidebar_container } from "./sidebar_container";
 import { sidebar_dev_lang } from "./sidebar_dev_lang";
 import { sidebar_deployment } from "./sidebar_deployment";
 import { sidebar_network } from "./sidebar_network";
+import { sicebar_environment } from "./sidebar_environment";
+import { sidebar_version_control } from "./sidebar_version_control";
 
 export const sidebar_config = {
     "/blog/": [
         sidebar_dev_lang,
+        sicebar_environment,
+        sidebar_version_control,
         sidebar_network,
         sidebar_algorithm,
         sidebar_build_tools,

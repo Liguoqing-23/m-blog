@@ -1,10 +1,13 @@
+import { DefaultTheme } from "vitepress";
+
 const prefix = "/blog/dev_lang";
 
-export const sidebar_dev_lang = {
+export const sidebar_dev_lang: DefaultTheme.SidebarItem = {
     text: "Dev Language",
     items: [
         {
             text: "JavaScript",
+            collapsed: true,
             items: [
                 {
                     text: "变量本质",
@@ -87,6 +90,10 @@ export const sidebar_dev_lang = {
                     link: `${prefix}/javascript/await and async`,
                 },
                 {
+                    text: "防抖节流",
+                    link: `${prefix}/javascript/防抖节流`,
+                },
+                {
                     text: "高性能处理大量数据列表",
                     link: `${prefix}/javascript/高性能处理大量数据列表`,
                 },
@@ -98,6 +105,7 @@ export const sidebar_dev_lang = {
         },
         {
             text: "Html",
+            collapsed: true,
             items: [
                 {
                     text: "src 和 href 有何区别",
@@ -111,6 +119,7 @@ export const sidebar_dev_lang = {
         },
         {
             text: "css",
+            collapsed: true,
             items: [
                 {
                     text: "元素水平垂直居中",

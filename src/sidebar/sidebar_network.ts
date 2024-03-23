@@ -1,10 +1,13 @@
+import { DefaultTheme } from "vitepress";
+
 const prefix = "/blog/network";
 
-export const sidebar_network = {
+export const sidebar_network: DefaultTheme.SidebarItem = {
     text: "Network",
     items: [
         {
             text: "axios",
+            collapsed: true,
             items: [
                 {
                     text: "axios 配置对象",

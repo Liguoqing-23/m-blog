@@ -1,10 +1,13 @@
+import { DefaultTheme } from "vitepress";
+
 const prefix = "/blog/container";
 
-export const sidebar_container = {
+export const sidebar_container: DefaultTheme.SidebarItem = {
     text: "Container",
     items: [
         {
             text: "Docker",
+            collapsed: true,
             items: [
                 {
                     text: "Docker 安装",

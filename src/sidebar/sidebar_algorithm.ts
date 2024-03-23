@@ -1,10 +1,13 @@
+import { DefaultTheme } from "vitepress";
+
 const prefix = "/blog/algorithm";
 
-export const sidebar_algorithm = {
+export const sidebar_algorithm: DefaultTheme.SidebarItem = {
     text: "Algorithm",
     items: [
         {
             text: "Binary Tree",
+            collapsed: true,
             items: [
                 {
                     text: "二叉树介绍",

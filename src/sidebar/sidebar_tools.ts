@@ -1,10 +1,13 @@
+import { DefaultTheme } from "vitepress";
+
 const prefix = "/blog/tools";
 
-export const sidebar_tools = {
+export const sidebar_tools: DefaultTheme.SidebarItem = {
     text: "Tools",
     items: [
         {
             text: "Git",
+            collapsed: true,
             items: [
                 {
                     text: "Git 基本使用",
@@ -14,6 +17,7 @@ export const sidebar_tools = {
         },
         {
             text: "RegExp",
+            collapsed: true,
             items: [
                 {
                     text: "RegExp 常用网站",
@@ -23,6 +27,7 @@ export const sidebar_tools = {
         },
         {
             text: "Google Chrome",
+            collapsed: true,
             items: [
                 {
                     text: "命令实现网站长截图",
