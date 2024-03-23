@@ -17,6 +17,10 @@ export const sidebar_version_control: DefaultTheme.SidebarItem = {
                     text: "Git 基本使用",
                     link: `${prefix}/git/Git 基本使用`,
                 },
+                {
+                    text: "Git 验证",
+                    link: `${prefix}/git/Git 验证`,
+                },
             ],
         },
     ],
