@@ -28,6 +28,26 @@ export const sicebar_environment: DefaultTheme.SidebarItem = {
                 {
                     text: "pnpm 解决的痛点",
                     link: `${prefix}/nodejs/pnpm 解决的痛点`,
+                },
+                {
+                    text: "fs 详解",
+                    link: `${prefix}/nodejs/fs 详解`,
+                },
+                {
+                    text: "events 详解",
+                    link: `${prefix}/nodejs/events 详解`,
+                },
+                {
+                    text: "buffer 详解",
+                    link: `${prefix}/nodejs/buffer 详解`,
+                },
+                {
+                    text: "stream 详解",
+                    link: `${prefix}/nodejs/stream 详解`,
+                },
+                {
+                    text: "http 详解",
+                    link: `${prefix}/nodejs/http 详解`,
                 }
             ],
         },

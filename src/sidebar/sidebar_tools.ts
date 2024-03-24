@@ -6,12 +6,12 @@ export const sidebar_tools: DefaultTheme.SidebarItem = {
     text: "Tools",
     items: [
         {
-            text: "Git",
+            text: "lodash",
             collapsed: true,
             items: [
                 {
-                    text: "Git 基本使用",
-                    link: `${prefix}/git/Git 基本使用`,
+                    text: "lodash 源码-数组-chunk",
+                    link: `${prefix}/lodash/lodash 源码-数组-chunk`,
                 },
             ],
         },
@@ -32,8 +32,8 @@ export const sidebar_tools: DefaultTheme.SidebarItem = {
                 {
                     text: "命令实现网站长截图",
                     link: `${prefix}/google_chrome/命令实现网站长截图`,
-                }
-            ]
-        }
+                },
+            ],
+        },
     ],
 };
