@@ -16,6 +16,16 @@ export const sidebar_tools: DefaultTheme.SidebarItem = {
             ],
         },
         {
+            text: "babel",
+            collapsed: true,
+            items: [
+                {
+                    text: "babel 基本使用",
+                    link: `${prefix}/babel/babel 基本使用`,
+                },
+            ],
+        },
+        {
             text: "RegExp",
             collapsed: true,
             items: [

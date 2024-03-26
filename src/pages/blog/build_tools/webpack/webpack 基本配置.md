@@ -12,7 +12,7 @@ webpack is a static module bundler for modern JavaScript applications.
 -   moudle 指的是 webpack 可以处理模块化的开发，如 CommonJS、ESM、AMD 等；
 -   modern 支持 ES6+，解决的大量开发问题。
 
-## webpack 和 webpack-cli 的关系
+### webpack 和 webpack-cli 的关系
 
 -   执行 webpack 命令，会执行 `node_moudles/.bin` 下的 webpack；
 -   webpack 在执行时依赖 webpack-cli；
@@ -72,7 +72,9 @@ module.exports = {
 }
 ```
 
-## CSS-loader
+## 处理 CSS 和 Less
+
+### CSS-loader
 
 webpack 默认只能处理 js 文件，如果想要处理 css 文件，需要安装 `css-loader` 和 `style-loader`。
 
@@ -111,7 +113,7 @@ use: [
 ];
 ```
 
-## Less-loader
+### Less-loader
 
 安装 `less-loader` 时会自动安装 `less`，当然也可以手动安装：
 
@@ -134,7 +136,9 @@ module.exports = {
 };
 ```
 
-## PostCSS
+## 处理 CSS 兼容性
+
+### PostCSS
 
 PostCSS 是一个 CSS 处理工具，可以帮助我们处理 CSS 文件，如添加浏览器前缀、压缩 CSS 等。
 
@@ -186,7 +190,9 @@ module.exports = {
 };
 ```
 
-## asset module types
+## 处理静态资源
+
+### asset module types
 
 webpack 5 之后，推荐使用 `asset module` 来处理静态资源，如图片、字体等，替代了 webpack 5 以前使用的一大堆 loader，如 raw-loader、url-loader、file-loader 等。
 
@@ -307,7 +313,9 @@ babel 有三种常见预设：
 -   `@babel/preset-react`：用于编译 JSX 语法；
 -   `@babel/preset-typescript`：用于编译 TypeScript 语法。
 
-## vue-loader
+## 处理 Vue
+
+### vue-loader
 
 ```bash
 npm install vue vue-loader @vue/compiler-sfc --save-dev
@@ -330,6 +338,132 @@ module.exports = {
     plugins: [new VueLoaderPlugin()],
 };
 ```
+
+## 处理 React
+
+在编写 React 代码时使用的是 jsx 语法，jsx 可以直接通过 babel 转换。对 jsx 进行处理需要如下插件：
+
+-   `@babel/plugin-syntax-jsx`：用于解析 jsx 语法；
+-   `@babel/plugin-transform-react-jsx`：用于将 jsx 转换为 React.createElement。
+-   `@babel/preset-transform-react-display-name`：用于在 React DevTools 中显示组件名称。
+
+```bash
+npm install @babel/plugin-syntax-jsx @babel/plugin-transform-react-jsx @babel/preset-transform-react-display-name --save-dev
+```
+
+很显然！太长了，这些也是有预设的，可以直接使用 `@babel/preset-react`。
+
+```bash
+npm install @babel/preset-react --save-dev
+```
+
+在 `webpack.config.js` 中配置：
+
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.m?jsx?$/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env", "@babel/preset-react"],
+                    },
+                },
+            },
+        ],
+    },
+    resolve: {
+        extensions: [".js", ".jsx"],
+    },
+};
+```
+
+## 处理 TypeScript
+
+### 方式一 ts-loader
+
+```bash
+npm install typescript ts-loader --save-dev
+```
+
+在 `webpack.config.js` 中配置：
+
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                use: "ts-loader",
+            },
+        ],
+    },
+    resolve: {
+        extensions: [".ts", ".js"],
+    },
+};
+```
+
+ts-loader 必须要有 `tsconfig.json` 配置文件，可以通过 `tsc --init` 生成一个默认配置文件。
+
+开发中不推荐使用 ts-loader，因为走 ts-loader 无法利用 polyfill。
+
+### 方式二 babel-loader
+
+```bash
+npm install @babel/preset-typescript --save-dev
+```
+
+在 `webpack.config.js` 中配置：
+
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            "@babel/preset-env",
+                            [
+                                "@babel/preset-typescript",
+                                { corejs: 3, useBuiltIns: "usage" },
+                            ],
+                        ],
+                    },
+                },
+            },
+        ],
+    },
+    resolve: {
+        extensions: [".ts", ".js"],
+    },
+};
+```
+
+开发中也不推荐单独使用 `@babel/preset-typescript`，因为它只能转换 TypeScript 语法，无法检测 TypeScript 的类型错误。
+
+### 处理 ts 的最佳实践
+
+-   使用 `tsc` 进行类型检查；
+-   使用 `babel-loader` 进行转换。
+
+在 `package.json` 中配置 tsc：
+
+```json
+{
+    "scripts": {
+        "type-check": "tsc --noEmit",
+        "type-check:watch": "tsc --noEmit --watch"
+    }
+}
+```
+
+`noEmit` 选项表示只进行类型检查，不生成文件。
 
 ## resolve 配置解析
 
@@ -397,7 +531,7 @@ import App from "@/App";
 import { Button } from "@/components/Button";
 ```
 
-## plugins
+## plugins 及常用插件
 
 > [!note] 官网
 > https://webpack.js.org/concepts/#plugins
@@ -408,7 +542,7 @@ plugins 是 webpack 的另一个核心。如果说 loader 只能用于特定模�
 
 比如 loader 能够编译 css 文件，但 loader 只能将样式插入到 style 中，无法单独抽取出 css 文件，而这项事情就可以利用 plugin 实现。
 
-## CleanWebpackPlugin
+### CleanWebpackPlugin
 
 每次打包时，都会生成一个新的 dist 文件夹，如果想要在打包前清空 dist 文件夹，对之前的打包项做一个覆盖，可以使用 `clean-webpack-plugin`。
 
@@ -439,7 +573,7 @@ module.exports = {
 };
 ```
 
-## HtmlWebpackPlugin
+### HtmlWebpackPlugin
 
 在 src 中我们有编写 index.html 文件，但 bundle 之后就没有了。然而项目部署时是需要 index.html 作为入口的，这时就需要使用 `html-webpack-plugin`。
 
@@ -479,7 +613,7 @@ module.exports = {
 </html>
 ```
 
-## DefinePlugin
+### DefinePlugin
 
 `DefinePlugin` 允许在编译时创建全局常量，这样可以在代码中引用这些值，而不必将这些值硬编码到代码中。
 
@@ -513,9 +647,9 @@ console.log(BASE_URL); // "https://api.example.com"
 </html>
 ```
 
-## Mode
+## 开发模式 Mode
 
-webpack 有三种模式：`development`、`production`、`none`。
+webpack 有三种模式：`development`、`production`、`none`。默认值是 `production`。
 
 > [!note] 官网
 > https://webpack.js.org/configuration/mode/
@@ -546,7 +680,7 @@ module.exports = merge(common, {
 });
 ```
 
-## devServer
+## 开启服务 devServer
 
 webpack-dev-server 是一个小型的 Node.js Express 服务器，它使用 webpack-dev-middleware 来服务于 webpack 打包生成的资源文件。
 
@@ -566,7 +700,7 @@ npm install webpack-dev-server --save-dev
 
 > webpack-dev-server 在编译后不会写入任何文件，而是将 bundle 驻留在内存中。webpack-dev-server 依赖了 memory-fs 库。
 
-## HMR
+### HMR
 
 因为在 live reloading 下每次修改代码，导致整个页面都会自动刷新，所以引入了 Hot Module Replacement (HMR) 允许在应用程序运行时更新模块，而无需刷新整个页面。
 
@@ -600,7 +734,7 @@ if (module.hot) {
 
 实际上在正式开发中已经不需要再手动的配置 HMR。vue 有 vue-loader，react 有 react-refresh，都已经内置了 HMR。
 
-## Host
+### Host
 
 默认情况下，webpack-dev-server 会监听 `localhost`，如果想要监听其他主机，可以通过 `host` 选项来配置。
 

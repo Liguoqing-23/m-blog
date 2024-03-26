@@ -23,6 +23,22 @@ export const sidebar_build_tools: DefaultTheme.SidebarItem = {
                     text: "webpack 基本配置",
                     link: `${prefix}/webpack/webpack 基本配置`,
                 },
+                {
+                    text: "搭建 webpack 本地服务器",
+                    link: `${prefix}/webpack/搭建 webpack 本地服务器`,
+                },
+                {
+                    text: "source-map",
+                    link: `${prefix}/webpack/source-map`,
+                },
+                {
+                    text: "webpack 性能优化",
+                    link: `${prefix}/webpack/webpack 性能优化`,
+                },
+                {
+                    text: "webpack 源码分析-01",
+                    link: `${prefix}/webpack/webpack 源码分析-01`,
+                },
             ],
         },
     ],
