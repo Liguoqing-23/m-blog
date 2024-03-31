@@ -33,7 +33,7 @@ const basic_info = [
                     <q-img
                         class="rounded-borders"
                         src="/avatar.jpg"
-                        style="height: 160px; width: 110px; border-radius: 46%"
+                        style="height: 160px; width: 110px; border-radius: 50%"
                     />
                 </div>
 
@@ -60,7 +60,7 @@ const basic_info = [
             </div>
 
             <!-- right -->
-            <div class="col-md-8 col-12 q-pa-md">
+            <div class="col-sm-8 col-12 q-pa-md">
                 <div class="right-box-item q-pt-md">
                     <div class="title q-mt-md">教育背景</div>
 
@@ -252,6 +252,7 @@ const basic_info = [
                     </div>
                 </div>
             </div>
+            
         </q-card-section>
     </q-card>
 </template>
@@ -265,21 +266,23 @@ const basic_info = [
     width: 830px !important;
 }
 
-.left-bg {
+.body--light .left-bg {
     background: #82cffd;
+}
+
+.body--dark .left-bg {
+    background: #3a4349;
 }
 
 .name {
     letter-spacing: 2px;
     font-size: 20px;
-    color: #000000;
     text-align: center;
     margin-top: 10px;
 }
 
 .info {
     font-size: 12px;
-    color: #000000;
     margin-top: 10px;
 }
 
