@@ -4,11 +4,6 @@ layout: page
 
 <template>
     <q-card flat style="background-color: transparent">
-        <div v-if="!is_print" class="flex justify-end no-bg">
-            <q-btn round flat icon="save" @click="download_file">
-                <q-tooltip>下载简历 pdf</q-tooltip>
-            </q-btn>
-        </div>
         <q-card-section horizontal class="flex flex-center justify-between">
             <!-- /avatar_mask.jpg -->
             <q-img class="rounded-borders" :src="props.avatar" style="height: 100%; width: 100%" />
@@ -66,8 +61,8 @@ const props = defineProps({
 });
 
 const status = reactive({
-    name: "李国清",
-    intention: "前端开发 随时到岗",
+    name: "李宪伟",
+    intention: "Java 后端开发 随时到岗",
     blog_link: {
         icon: "link",
         title: "个人博客",
@@ -77,22 +72,17 @@ const status = reactive({
         {
             icon: "email",
             title: "邮箱",
-            content: "2943472430@qq.com",
+            content: "2472062608@qq.com",
         },
         {
             icon: "phone",
             title: "联系电话",
-            content: "153-2161-0166",
+            content: "132-6904-9680",
         },
         {
             icon: "cake",
             title: "出生年月",
-            content: "2000 年 2 月",
-        },
-        {
-            icon: "person_pin_circle",
-            title: "政治面貌",
-            content: "中共党员",
+            content: "2002 年 11 月",
         },
     ],
 });

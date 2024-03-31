@@ -8,7 +8,7 @@ const theme_config = {
     nav: [
         { text: "主页", link: "/" },
         { text: "博客", link: "/blog/welcome" },
-        { text: "关于", link: "/about" },
+        { text: "关于", link: "/new-about" },
     ],
     logo: {
         light: "/logo-light.png",

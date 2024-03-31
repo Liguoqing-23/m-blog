@@ -9,7 +9,9 @@ import ShowImage from "../../src/components/ShowImage.vue";
 
 // About Page Components
 import BasicInfo from "../../src/components/about/BasicInfo.vue";
+import BasicInfoLXW from "../../src/components/about/BasicInfoLXW.vue";
 import NavBar from "../../src/components/about/NavBar.vue";
+import NewBasicInfo from "../../src/components/about/NewBasicInfo.vue";
 
 import "./custom.css";
 
@@ -29,6 +31,8 @@ export default {
         app.component("ShowImage", ShowImage);
 
         app.component("BasicInfo", BasicInfo);
+        app.component("NewBasicInfo", NewBasicInfo);
+        app.component("BasicInfoLXW", BasicInfoLXW);
         app.component("NavBar", NavBar);
     },
 } satisfies Theme;

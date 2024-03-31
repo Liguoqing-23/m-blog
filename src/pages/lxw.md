@@ -1,6 +1,6 @@
 <auto-dark />
 
-<basic-info />
+<basic-info-l-x-w avatar="/lxw-avatar.jpg" />
 
 ## 教育背景
 
@@ -56,3 +56,26 @@
 -   学习能力强，对新技术有强烈的好奇心，能够快速学习并应用新技术。
 -   有良好的代码风格，能够编写高质量的代码，对代码质量有一定的追求。
 -   有较强的自我驱动力，能够独立解决问题，有较强的抗压能力。
+
+<style module>
+/* h2 {
+    font-size: 18px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+ul {
+    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+}
+
+blockquote {
+    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+}
+
+a {
+    color: var(#8585bd) !important;
+    text-decoration: none !important;
+} */
+</style>
