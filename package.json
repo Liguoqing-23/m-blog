@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "myq-blog by vitepress.",
     "main": "index.js",
+    "type": "module",
     "scripts": {
         "start": "vitepress dev --port 8080",
         "build": "vitepress build",
@@ -19,7 +20,9 @@
     "license": "ISC",
     "devDependencies": {
         "@quasar/extras": "^1.16.9",
+        "@quasar/vite-plugin": "^1.6.0",
         "quasar": "^2.14.6",
+        "sass": "^1.33.0",
         "vitepress": "^1.0.0-rc.44",
         "vue": "^3.4.21"
     },

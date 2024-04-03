@@ -3,6 +3,8 @@ import type { UserConfig } from "vitepress";
 
 import { sidebar_config } from "../src/sidebar";
 
+// import { quasar } from "@quasar/vite-plugin";
+
 const theme_config = {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -26,9 +28,7 @@ const theme_config = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    head: [
-        ["link", { rel: "icon", href: "/logo.png" }],
-    ],
+    head: [["link", { rel: "icon", href: "/logo.png" }]],
     lang: "zh",
     title: "MYQ 博客笔记",
     description: "探索|记录|学习|思考",
@@ -38,7 +38,16 @@ export default defineConfig({
     themeConfig: theme_config,
     cacheDir: "cache",
     outDir: "dist",
+    sitemap: {
+        hostname: "https://www.myqblog.top",
+        lastmodDateOnly: false,
+    },
     vite: {
+        plugins: [
+            // quasar({
+            //     devTreeshaking: true,
+            // }),
+        ],
         //   optimizeDeps: {
         //     exclude: ['quasar'],
         //   },

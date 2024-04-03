@@ -104,6 +104,36 @@ export const sidebar_dev_lang: DefaultTheme.SidebarItem = {
             ],
         },
         {
+            text: "TypeScript",
+            collapsed: true,
+            items: [
+                {
+                    text: "深入理解 TypeScript",
+                    link: "https://jkchao.github.io/typescript-book-chinese",
+                },
+                {
+                    text: "TS 语法基础",
+                    link: `${prefix}/typescript/TS 语法基础`,
+                },
+                {
+                    text: "TS 面向对象",
+                    link: `${prefix}/typescript/TS 面向对象`,
+                },
+                {
+                    text: "TS 泛型",
+                    link: `${prefix}/typescript/TS 泛型`,
+                },
+                {
+                    text: "TS 映射类型",
+                    link: `${prefix}/typescript/TS 映射类型`,
+                },
+                {
+                    text: "TS 模块化",
+                    link: `${prefix}/typescript/TS 模块化`,
+                },
+            ],
+        },
+        {
             text: "Html",
             collapsed: true,
             items: [

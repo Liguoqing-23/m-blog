@@ -1,4 +1,4 @@
-<script>
+<script setup>
 const basic_info = [
     {
         icon: "email",
