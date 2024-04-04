@@ -48,12 +48,12 @@ export default defineConfig({
             //     devTreeshaking: true,
             // }),
         ],
-        //   optimizeDeps: {
-        //     exclude: ['quasar'],
-        //   },
-        //   resolve: {
-        //     dedupe: ['vue', 'quasar', 'Quasar', 'pubsub-js'], // avoid error when using dependencies that also use Vue
-        //   },
+        optimizeDeps: {
+            exclude: ["quasar"],
+        },
+          resolve: {
+            dedupe: ['vue', 'quasar', 'Quasar', 'pubsub-js'], // avoid error when using dependencies that also use Vue
+          },
         //   build: {
         //     rollupOptions: {
         //       external: [/quasar\/.+/, 'vue']

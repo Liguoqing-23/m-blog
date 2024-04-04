@@ -124,10 +124,6 @@ export const sidebar_dev_lang: DefaultTheme.SidebarItem = {
                     link: `${prefix}/typescript/TS 泛型`,
                 },
                 {
-                    text: "TS 映射类型",
-                    link: `${prefix}/typescript/TS 映射类型`,
-                },
-                {
                     text: "TS 模块化",
                     link: `${prefix}/typescript/TS 模块化`,
                 },

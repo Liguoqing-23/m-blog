@@ -10,6 +10,10 @@ export const sidebar_network: DefaultTheme.SidebarItem = {
             collapsed: true,
             items: [
                 {
+                    text: "TS 对 axios 的二次封装",
+                    link: `${prefix}/axios/TS 对 axios 的二次封装`,
+                },
+                {
                     text: "axios 配置对象",
                     link: `${prefix}/axios/axios 配置对象`,
                 },
@@ -28,7 +32,7 @@ export const sidebar_network: DefaultTheme.SidebarItem = {
                 {
                     text: "axios 源码（二）入口文件",
                     link: `${prefix}/axios/axios 源码（二）入口文件`,
-                }
+                },
             ],
         },
     ],
