@@ -112,6 +112,10 @@ export const sidebar_dev_lang: DefaultTheme.SidebarItem = {
                     link: "https://jkchao.github.io/typescript-book-chinese",
                 },
                 {
+                    text: "TS 设计模式",
+                    link: `${prefix}/typescript/TS 设计模式`,
+                },
+                {
                     text: "TS 语法基础",
                     link: `${prefix}/typescript/TS 语法基础`,
                 },

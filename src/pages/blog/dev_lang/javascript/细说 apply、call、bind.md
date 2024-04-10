@@ -1,5 +1,7 @@
 # 细说 apply、call、bind
 
+`apply`、`call`、`bind` 都是用来改变 this 指向的方法。关于 `this` 的指向，可以参考[令我好友无比困惑的 this](./令我好友无比困惑的%20this.md)。
+
 ## apply 和 call 的区别
 
 `apply` 和 `call` 是 JS 提供的两个方法，用来显示绑定 this。这两个方法的作用是一样的，都是用来改变函数的 this 指向。它们的区别在于传参的方式不同。

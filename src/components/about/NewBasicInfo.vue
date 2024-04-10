@@ -1,27 +1,4 @@
-<script setup>
-const basic_info = [
-    {
-        icon: "email",
-        title: "邮箱",
-        content: "2943472430@qq.com",
-    },
-    {
-        icon: "phone",
-        title: "联系电话",
-        content: "153-2161-0166",
-    },
-    {
-        icon: "cake",
-        title: "出生年月",
-        content: "2000 年 2 月",
-    },
-    {
-        icon: "person_pin_circle",
-        title: "政治面貌",
-        content: "中共党员",
-    },
-];
-</script>
+<script setup></script>
 
 <template>
     <q-card flat class="row justify-center items-center q-my-lg">
@@ -205,7 +182,7 @@ const basic_info = [
                         <div style="font-weight: 700">
                             金砖国家健康医疗国际合作委员会山东代表处（济南）
                         </div>
-                        <div>2024.02-至今</div>
+                        <div>2024.04-至今</div>
                     </div>
 
                     <div class="bar bar-project">
@@ -252,7 +229,6 @@ const basic_info = [
                     </div>
                 </div>
             </div>
-            
         </q-card-section>
     </q-card>
 </template>

@@ -5,8 +5,6 @@
 @import "@quasar/extras/material-icons/material-icons.css";
 
 :root {
-    --md-code-bg-color: #24283a;
-
     /* https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css */
     /* normal text font */
     --vp-font-family-base: "Roboto", sans-serif;
@@ -14,6 +12,8 @@
     --vp-font-family-mono: Consolas, "Jetbrains Mono", "Courier New", monospace;
 
     /* Code */
+    --md-code-bg-color: #24283a;
+
     --vp-code-line-height: 1.7;
     --vp-code-font-size: 1em;
     --vp-code-color: #a8b1ff;

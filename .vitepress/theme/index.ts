@@ -4,6 +4,7 @@ import DefaultTheme from "vitepress/theme-without-fonts";
 
 import { Quasar, Dialog, Notify } from "quasar";
 
+import AutoDarkClientOnly from "../../src/components/AutoDarkClientOnly.vue";
 import AutoDark from "../../src/components/AutoDark.vue";
 import ShowImage from "../../src/components/ShowImage.vue";
 
@@ -27,6 +28,8 @@ export default {
             // @ts-ignore
             { req: { headers: {} } }
         );
+
+        app.component("AutoDarkClientOnly", AutoDarkClientOnly);
         app.component("AutoDark", AutoDark);
         app.component("ShowImage", ShowImage);
 

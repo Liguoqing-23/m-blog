@@ -132,8 +132,6 @@ console.log(getProperty(obj, "d")); // Error // [!code error]
 
 ## TS 映射类型
 
-### 映射类型的定义
-
 映射类型是一种从旧类型中创建新类型的方式，通过映射类型，可以在定义的时候用类型操作符对已有的类型进行处理，生成新的类型。
 
 -   映射类型只能通过 `type` 关键字定义，不能用 `interface`
@@ -193,6 +191,186 @@ console.log(writablePerson); // { name: 'Doe', age: 40 }
 
 ## TS 条件类型
 
-<q-card>
-123
-</q-card>
+条件类型是一种由条件表达式决定的类型，通过 `extends` 关键字进行条件判断。
+
+```typescript
+type TypeName<T> = T extends string
+    ? "string"
+    : T extends number
+    ? "number"
+    : T extends boolean
+    ? "boolean"
+    : T extends undefined
+    ? "undefined"
+    : T extends Function
+    ? "function"
+    : "object";
+
+type T0 = TypeName<string>; // "string"
+type T1 = TypeName<"a">; // "string"
+type T2 = TypeName<true>; // "boolean"
+type T3 = TypeName<() => void>; // "function"
+type T4 = TypeName<string[]>; // "object"
+```
+
+### 条件类型中的推断
+
+条件类型中可以通过 `infer` 关键字，从正在比较中的类型中推断类型，并在 `true` 分支中使用。
+
+```typescript
+// RetureType
+type MyReturnType<T extends (...args: any) => any> = T extends (
+    ...args: any
+) => infer R // 推断出返回值类型
+    ? R // 返回返回值类型
+    : any;
+
+type T0 = MyReturnType<() => string>; // string
+type T1 = MyReturnType<() => number>; // number
+
+// Parameters
+type MyParameters<T extends (...args: any) => any> = T extends (
+    ...args: infer P // 推断出参数类型
+) => any
+    ? P // 返回参数类型
+    : never;
+
+type T0 = MyParameters<() => string>; // []
+type T1 = MyParameters<(x: number) => void>; // [number]
+```
+
+### 分发条件类型
+
+在泛型中使用条件类型时，如果传入联合类型，TS 会对联合类型进行分发，然后进行条件判断。
+
+```typescript
+type ArrayType<T> = T extends any ? T[] : never;
+
+type NumOrStrArray = ArrayType<number | string>; // number[] | string[]
+
+const numArray: NumOrStrArray = [1, 2, 3];
+const strArray: NumOrStrArray = ["a", "b", "c"];
+```
+
+## TS 常见内置工具
+
+-   `Partial<T>`：将类型 `T` 中的所有属性设置为**可选**。
+-   `Required<T>`：将类型 `T` 中的所有属性设置为**必选**。
+-   `Readonly<T>`：将类型 `T` 中的所有属性设置为**只读**。
+-   `Record<K, T>`：构造一个类型，其属性名的类型为 `K`，属性值的类型为 `T`。
+
+```typescript
+type PageInfo = {
+    title: string;
+};
+
+type Page = "home" | "about" | "contact";
+
+type MyRecord<K extends keyof any, T> = {
+    [P in K]: T;
+};
+
+const x: MyRecord<Page, PageInfo> = {
+    home: { title: "home" },
+    about: { title: "about" },
+    contact: { title: "contact" },
+};
+```
+
+-   `Pick<T, K>`：从类型 `T` 中挑选出部分属性 `K` 构造新类型。
+
+```typescript
+interface Person {
+    name: string;
+    age: number;
+}
+
+type MyPick<T, K extends keyof T> = {
+    [P in K]: T[P];
+};
+
+type PersonName = MyPick<Person, "name">; // { name: string }
+```
+
+-   `Omit<T, K>`：从类型 `T` 中剔除部分属性 `K` 构造新类型。
+
+```typescript
+type Person = {
+    name: string;
+    age: number;
+};
+
+// type MyOmit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
+// 不用 Pick
+// type MyOmit<T, K extends keyof T> = {
+//     [P in Exclude<keyof T, K>]: T[P];
+// };
+
+// 不用 Exclude
+type MyOmit<T, K extends keyof T> = {
+    [P in keyof T as P extends K ? never : P]: T[P];
+};
+
+type PersonAge = MyOmit<Person, "name">;
+
+const person: PersonAge = {
+    age: 18,
+};
+```
+
+-   `Exclude<T, U>`：从类型 `T` 中剔除可以赋值给 `U` 的类型。
+
+```typescript
+type MyExclude<T, U> = T extends U ? never : T;
+
+type T0 = MyExclude<"a" | "b" | "c", "a">; // "b" | "c"
+type T1 = MyExclude<string | number | (() => void), Function>; // string | number
+```
+
+-   `Extract<T, U>`：从类型 `T` 中提取可以赋值给 `U` 的类型。
+
+```typescript
+type MyExtract<T, U> = T extends U ? T : never;
+
+type T0 = MyExtract<"a" | "b" | "c", "a">; // "a"
+type T1 = MyExtract<string | number | (() => void), Function>; // () => void
+```
+
+-   `NonNullable<T>`：从类型 `T` 中剔除 `null` 和 `undefined`。
+
+```typescript
+type NonNullable<T> = T & {};
+
+type T0 = MyNonNullable<string | number | undefined>; // string | number
+type T1 = MyNonNullable<string | number | null | undefined>; // string | number
+```
+
+-   `InstanceType<T>`：获取构造函数类型的实例类型。
+
+```typescript
+type MyInstanceType<T extends abstract new (...args: any) => any> =
+    T extends abstract new (...args: any) => infer R ? R : any;
+
+function factory<T extends new () => any>(c: T): MyInstanceType<T> {
+    return new c();
+}
+
+class Person {
+    name: string;
+    constructor() {
+        this.name = "Tom";
+    }
+}
+
+const person = factory(Person); // 返回 Person 的实例类型
+
+class Animal {
+    name: string;
+    constructor() {
+        this.name = "Dog";
+    }
+}
+
+const animal = factory(Animal); // 返回 Animal 的实例类型
+```
