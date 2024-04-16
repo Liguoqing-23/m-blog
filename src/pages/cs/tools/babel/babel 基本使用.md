@@ -44,7 +44,7 @@ foo();
 
 ### babel 的其他使用方式
 
-[在 webpack 中使用 babel](/blog/build_tools/webpack/webpack%20基本配置#处理-es6)
+[在 webpack 中使用 babel](/cs/build_tools/webpack/webpack%20基本配置#处理-es6)
 
 ## babel 原理
 
