@@ -17,6 +17,13 @@
 
 > 负责基于 SpringBoot + MyBatis + MySQL 的后端开发，参与公司科研管理项目的开发维护。
 
+## 培训经历
+
+<nav-bar :info_list="[`2023.2-2023.05`, `黑马程序员`, `Java 后端实习`]" />
+
+> -   通过黑马程序员的培训，学习了 Java 基础、SpringBoot、MyBatis、MySQL、Vue3、Quasar 等技术。
+> -   通过培训，对 Java 后端开发有了更深入的了解，对前端开发也有了一定的了解。
+
 ## 技能清单
 
 -   熟练使用并掌握 SpringBoot + MyBatis + MySQL 进行后端开发。
@@ -58,7 +65,7 @@
 -   有较强的自我驱动力，能够独立解决问题，有较强的抗压能力。
 
 <style module>
-/* h2 {
+    h2 {
     font-size: 18px !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -77,5 +84,5 @@ blockquote {
 a {
     color: var(#8585bd) !important;
     text-decoration: none !important;
-} */
+}
 </style>

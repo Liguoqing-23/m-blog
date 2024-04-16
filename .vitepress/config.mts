@@ -2,14 +2,106 @@ import { defineConfig } from "vitepress";
 import type { UserConfig } from "vitepress";
 
 import { sidebar_config } from "../src/sidebar";
+import mathjax3 from "markdown-it-mathjax3";
 
 // import { quasar } from "@quasar/vite-plugin";
 
+const customElements = [
+    "math",
+    "maction",
+    "maligngroup",
+    "malignmark",
+    "menclose",
+    "merror",
+    "mfenced",
+    "mfrac",
+    "mi",
+    "mlongdiv",
+    "mmultiscripts",
+    "mn",
+    "mo",
+    "mover",
+    "mpadded",
+    "mphantom",
+    "mroot",
+    "mrow",
+    "ms",
+    "mscarries",
+    "mscarry",
+    "mscarries",
+    "msgroup",
+    "mstack",
+    "mlongdiv",
+    "msline",
+    "mstack",
+    "mspace",
+    "msqrt",
+    "msrow",
+    "mstack",
+    "mstack",
+    "mstyle",
+    "msub",
+    "msup",
+    "msubsup",
+    "mtable",
+    "mtd",
+    "mtext",
+    "mtr",
+    "munder",
+    "munderover",
+    "semantics",
+    "math",
+    "mi",
+    "mn",
+    "mo",
+    "ms",
+    "mspace",
+    "mtext",
+    "menclose",
+    "merror",
+    "mfenced",
+    "mfrac",
+    "mpadded",
+    "mphantom",
+    "mroot",
+    "mrow",
+    "msqrt",
+    "mstyle",
+    "mmultiscripts",
+    "mover",
+    "mprescripts",
+    "msub",
+    "msubsup",
+    "msup",
+    "munder",
+    "munderover",
+    "none",
+    "maligngroup",
+    "malignmark",
+    "mtable",
+    "mtd",
+    "mtr",
+    "mlongdiv",
+    "mscarries",
+    "mscarry",
+    "msgroup",
+    "msline",
+    "msrow",
+    "mstack",
+    "maction",
+    "semantics",
+    "annotation",
+    "annotation-xml",
+    "mjx-container",
+    "mjx-assistive-mml",
+];
 const theme_config = {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
         { text: "主页", link: "/" },
-        { text: "博客", link: "/blog/welcome" },
+        { text: "CS", link: "/cs/welcome" },
+        { text: "GEE", link: "/gee/welcome" },
+        { text: "Adobe", link: "/adobe/welcome" },
         { text: "关于", link: "/new-about" },
     ],
     logo: {
@@ -51,9 +143,9 @@ export default defineConfig({
         optimizeDeps: {
             exclude: ["quasar"],
         },
-          resolve: {
-            dedupe: ['vue', 'quasar', 'Quasar', 'pubsub-js'], // avoid error when using dependencies that also use Vue
-          },
+        resolve: {
+            dedupe: ["vue", "quasar", "Quasar", "pubsub-js"], // avoid error when using dependencies that also use Vue
+        },
         //   build: {
         //     rollupOptions: {
         //       external: [/quasar\/.+/, 'vue']
@@ -67,6 +159,16 @@ export default defineConfig({
             // https://shiki.style/themes
             light: "monokai",
             dark: "monokai",
+        },
+        config: (md) => {
+            md.use(mathjax3);
+        },
+    },
+    vue: {
+        template: {
+            compilerOptions: {
+                isCustomElement: (tag) => customElements.includes(tag),
+            },
         },
     },
 } as UserConfig);
